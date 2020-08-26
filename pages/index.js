@@ -1,9 +1,10 @@
+import Avatar from "@material-ui/core/Avatar";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "./../components/Layout";
-import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,11 +27,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
-
-  React.useEffect(() => {
-    console.log("1: ", process.env.NEXT_PUBLIC_ENVIRONMENT);
-    console.log("2: ", process.env.NEXT_PUBLIC_ENV_VARIABLE);
-  }, []);
 
   return (
     <Layout home>
@@ -67,6 +63,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      <Box m={4}>ENV: {process.env.NEXT_PUBLIC_DEBUG}</Box>
+      {/* local => development => general */}
     </Layout>
   );
 }
