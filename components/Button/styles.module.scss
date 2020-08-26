@@ -1,0 +1,16 @@
+@mixin primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.button {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: solid 1px transparent;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  @include primary;
+}
