@@ -35,7 +35,7 @@ const PostItem = ({ data }) => {
   return (
     <Layout>
       <Head>
-        <title>{data.title}</title>
+        <title>{data?.title}</title>
       </Head>
       <div className={classes.root}>
         <Paper className={classes.paper}>
@@ -64,7 +64,7 @@ const PostItem = ({ data }) => {
           </Grid>
         </Paper>
         <Box m={4}>
-          <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+          <div dangerouslySetInnerHTML={{ __html: data?.contentHtml }} />
         </Box>
       </div>
     </Layout>
