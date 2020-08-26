@@ -32,10 +32,11 @@ const useStyles = makeStyles((theme) => ({
 
 const PostItem = ({ data }) => {
   const classes = useStyles();
+  if (!data) return null;
   return (
     <Layout>
       <Head>
-        <title>{data?.title}</title>
+        <title>{data.title}</title>
       </Head>
       <div className={classes.root}>
         <Paper className={classes.paper}>
@@ -53,10 +54,10 @@ const PostItem = ({ data }) => {
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
                   <Typography gutterBottom variant="subtitle1">
-                    {data?.title}
+                    {data.title}
                   </Typography>
                   <Typography variant="body2" color="textSecondary">
-                    <Date dateString={data?.date}></Date>
+                    <Date dateString={data.date}></Date>
                   </Typography>
                 </Grid>
               </Grid>
